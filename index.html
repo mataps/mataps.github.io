@@ -1,76 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Case Studies</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryan Navarroza | Elite Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.6;
+    :root {
+      --bg: #020617;
+      --card: rgba(15, 23, 42, 0.7);
+      --accent: #38bdf8;
+      --accent2: #22c55e;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
     }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      color: var(--text);
+    }
+
     header {
-      background: #020617;
-      padding: 30px;
+      padding: 100px 20px 60px;
       text-align: center;
     }
+
     header h1 {
+      font-size: 3.5rem;
       margin: 0;
-      font-size: 2.5rem;
     }
-    section {
-      padding: 30px;
-      max-width: 1000px;
-      margin: auto;
+
+    header p {
+      color: var(--muted);
+      font-size: 1.3rem;
+      margin-top: 10px;
     }
-    .card {
-      background: #1e293b;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    h2 {
-      color: #38bdf8;
-    }
-    h3 {
-      color: #22c55e;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    .tag {
+
+    .badge {
       display: inline-block;
-      background: #334155;
-      padding: 5px 10px;
-      margin: 3px;
-      border-radius: 8px;
+      margin-top: 15px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: black;
+      font-weight: 600;
       font-size: 0.8rem;
     }
+
+    .cta {
+      margin-top: 25px;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border: none;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover { transform: scale(1.08); }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 18px;
+      padding: 22px;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      margin: 3px;
+      background: #1e293b;
+      color: var(--muted);
+    }
+
+    .metrics {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .metric {
+      background: #020617;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+
+    .view-btn {
+      margin-top: 15px; display: inline-block; cursor: pointer; font-size: 0.85rem;
+      color: var(--accent); text-decoration: underline;
+    }
+
+    /* Modal */
+    .modal {
+      display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+      width: 100%; height: 100%; background: rgba(0,0,0,0.7);
+      align-items: center; justify-content: center;
+    }
+
+    .modal-content {
+      background: #0f172a; padding: 25px; border-radius: 16px;
+      max-width: 700px; width: 90%; max-height: 80vh; overflow-y: auto;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    }
+
+    .close {
+      float: right; cursor: pointer; font-size: 1.2rem; color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: var(--muted);
+    }
+
   </style>
 </head>
 <body>
 
 <header>
-  <h1>🚀 Portfolio Case Studies</h1>
-  <p>Technical Lead | Full-Stack Developer</p>
+  <h1>Ryan Navarroza</h1>
+  <p>Senior Full-Stack Developer | SaaS, APIs, Scalable Systems</p>
+  <div class="badge">OPEN TO REMOTE OPPORTUNITIES</div>
+  <!-- <div class="cta">
+    <button class="btn">📩 Contact Me</button>
+  </div> -->
 </header>
 
 <section>
+  <h2>🚀 Impact Highlights</h2>
+  <div class="metrics">
+    <div class="metric">10+ Years Experience</div>
+    <div class="metric">Led Multiple Dev Teams</div>
+    <div class="metric">Built Scalable SaaS Platforms</div>
+  </div>
+</section>
 
+<section>
+  <h2>💼 Featured Projects</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>📊 Business Dashboard System</h3>
+      <p>Enterprise dashboard for managing operations, documents, and eCommerce workflows.</p>
+      <div class="metrics">
+        <div class="metric">Improved Workflow Efficiency</div>
+        <div class="metric">Scalable Architecture</div>
+      </div>
+      <div>
+        <span class="tag">.NET</span>
+        <span class="tag">Angular</span>
+        <span class="tag">SQL Server</span>
+      </div>
+    <div class="view-btn" onclick="openModal('modal1')">View Case Study →</div>
+    </div>
+
+    <div class="card">
+      <h3>🗺️ Real-Time Tracking System</h3>
+      <p>Interactive tracking system with real-time map visualization and device monitoring.</p>
+      <div class="metrics">
+        <div class="metric">Real-Time Data</div>
+        <div class="metric">Improved Asset Visibility</div>
+      </div>
+      <div>
+        <span class="tag">Angular</span>
+        <span class="tag">Laravel</span>
+        <span class="tag">Google Maps API</span>
+      </div>
+      <div class="view-btn" onclick="openModal('modal2')">View Case Study →</div>
+    </div>
+
+    <div class="card">
+      <h3>⚡ Performance Optimization</h3>
+      <p>Full-stack optimization improving system speed, scalability, and responsiveness.</p>
+      <div class="metrics">
+        <div class="metric">Faster Load Times</div>
+        <div class="metric">Optimized Queries</div>
+      </div>
+      <div>
+        <span class="tag">C#</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Angular</span>
+      </div>
+      <div class="view-btn" onclick="openModal('modal3')">View Case Study →</div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>🧠 Technical Expertise</h2>
+  <div class="grid">
+    <div class="card"><h3>Backend</h3><p>.NET / C# / Node.js / Laravel / SQL Server / API Design</p></div>
+    <div class="card"><h3>Frontend</h3><p>Angular / React / UI Architecture</p></div>
+    <div class="card"><h3>Leadership</h3><p>Team Leadership / Mentorship / System Design</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>📬 Contact</h2>
   <div class="card">
+    <p>Let’s build scalable systems together.</p>
+    <p>Email: <a href="mailto:mataps47@gmail.com">mataps47@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/mataps">github.com/mataps</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/rnavarroza">linkedin.com/in/rnavarroza</a></p>
+  </div>
+</section>
+
+<!-- Modals -->
+<div id="modal1" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal1')">✖</span>
     <h2>📊 Business Management Dashboard System</h2>
-    <p><strong>Overview:</strong> A scalable web-based dashboard for managing documents, products, and storefront operations.</p>
+    <p><strong>Overview:</strong> A scalable web-based dashboard designed to help businesses manage documents, products, and storefront operations in a centralized platform.</p>
     
     <h3>🎯 Problem</h3>
-    <p>Businesses lacked a unified system to manage workflows, products, and operations efficiently.</p>
+    <p>Businesses needed a unified system to:</p>
+    <ul>
+      <li>Manage internal documents and workflows</li>
+      <li>Handle product listings and offers</li>
+      <li>Monitor operations efficiently</li>
+    </ul>
+    <p>Existing tools were fragmented and inefficient.</p>
 
     <h3>💡 Solution</h3>
-    <p>Developed a modular dashboard system designed for scalability and maintainability.</p>
+    <p>Designed and built a <b>modular dashboard system</b> with a focus on scalability, maintainability, and performance.</p>
 
     <h3>🛠 Tech Stack</h3>
     <div>
@@ -83,31 +273,43 @@
     <h3>⚙️ Key Features</h3>
     <ul>
       <li>Document management system</li>
-      <li>Product & offer management</li>
-      <li>Business storefront</li>
+      <li>Product & offer management (eCommerce integration)</li>
+      <li>Business storefront interface</li>
       <li>Role-based access control</li>
+      <li>Scalable modular architecture</li>
     </ul>
 
     <h3>🚀 Contributions</h3>
     <ul>
-      <li>Led full-stack architecture</li>
-      <li>Built reusable components</li>
-      <li>Mentored developers</li>
+      <li>Led full-stack architecture and development</li>
+      <li>Designed reusable components for dashboard modules</li>
+      <li>Mentored developers and enforced coding standards</li>
+      <li>Improved system maintainability and structure</li>
     </ul>
 
     <h3>📈 Impact</h3>
-    <p>Improved workflow efficiency and enabled scalable growth.</p>
-  </div>
+    <ul>
+      <li>Streamlined business workflows</li>
+      <li>Reduced manual processing</li>
+      <li>Enabled scalable feature expansion</li>
+    </ul>
+    </div>
+</div>
 
-  <div class="card">
+<div id="modal2" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal2')">✖</span>
     <h2>🗺️ Real-Time Tracking System (API Integration)</h2>
-    <p><strong>Overview:</strong> A tracking platform using map-based visualization powered by APIs.</p>
+    <p><strong>Overview:</strong> A real-time tracking platform that monitors critical devices using map-based visualization powered by external APIs.</p>
 
     <h3>🎯 Problem</h3>
-    <p>Need for real-time asset tracking and visibility.</p>
+    <p>Organizations needed:</p>
+    <ul>
+      <li>Real-time visibility of assets</li>
+      <li>Accurate location tracking</li>
+      <li>Easy-to-use interface for monitoring</li>
+    </ul>
 
     <h3>💡 Solution</h3>
-    <p>Integrated external APIs to provide real-time tracking and visualization.</p>
+    <p>Built a map-driven tracking system integrating external APIs for real-time data visualization.</p>
 
     <h3>🛠 Tech Stack</h3>
     <div>
@@ -118,31 +320,43 @@
 
     <h3>⚙️ Key Features</h3>
     <ul>
-      <li>Real-time tracking</li>
-      <li>Interactive maps</li>
-      <li>Device monitoring</li>
+      <li>Real-time device tracking</li>
+      <li>Interactive map interface</li>
+      <li>Location visualization and updates</li>
+      <li>Device status monitoring</li>
     </ul>
 
     <h3>🚀 Contributions</h3>
     <ul>
-      <li>Integrated Google Maps API</li>
-      <li>Developed UI for tracking</li>
-      <li>Built backend services</li>
+      <li>Integrated Google Maps API for real-time tracking</li>
+      <li>Developed frontend UI for map interactions</li>
+      <li>Built backend services for handling tracking data</li>
+      <li>Improved system usability and responsiveness</li>
     </ul>
 
     <h3>📈 Impact</h3>
-    <p>Improved asset monitoring and operational efficiency.</p>
-  </div>
+    <ul>
+      <li>Improved asset visibility and monitoring</li>
+      <li>Enhanced operational efficiency</li>
+      <li>Delivered accurate and reliable tracking system</li>
+    </ul>
+    </div>
+</div>
 
-  <div class="card">
-    <h2>⚡ Performance Optimization</h2>
-    <p><strong>Overview:</strong> Optimization of a business dashboard for speed and scalability.</p>
+<div id="modal3" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal3')">✖</span>
+    <h2>⚡ Performance Optimization of Web Dashboard</h2>
+    <p><strong>Overview:</strong> Focused on improving performance, scalability, and responsiveness of an existing business dashboard system.</p>
 
     <h3>🎯 Problem</h3>
-    <p>Slow load times and inefficient data handling.</p>
+    <p>The system experienced:</p>
+    <ul>
+      <li>Slow loading times</li>
+      <li>Inefficient database queries</li>
+      <li>Poor frontend performance</li>
+    </ul>
 
     <h3>💡 Solution</h3>
-    <p>Optimized backend, database, and frontend layers.</p>
+    <p>Performed end-to-end performance optimization across backend, database, and frontend layers.</p>
 
     <h3>🛠 Tech Stack</h3>
     <div>
@@ -153,24 +367,47 @@
 
     <h3>⚙️ Optimization Strategies</h3>
     <ul>
-      <li>SQL query optimization</li>
-      <li>Lazy loading implementation</li>
-      <li>Reduced API calls</li>
-      <li>Code refactoring</li>
+      <li>Optimized SQL queries and indexing</li>
+      <li>Reduced unnecessary API calls</li>
+      <li>Implemented lazy loading in frontend</li>
+      <li>Refactored heavy components</li>
+      <li>Improved data handling and caching</li>
     </ul>
 
     <h3>🚀 Contributions</h3>
     <ul>
-      <li>Identified bottlenecks</li>
-      <li>Improved backend efficiency</li>
-      <li>Enhanced frontend performance</li>
+      <li>Identified performance bottlenecks</li>
+      <li>Refactored backend logic for efficiency</li>
+      <li>Improved frontend rendering speed</li>
+      <li>Introduced better data flow patterns</li>
     </ul>
 
     <h3>📈 Results</h3>
-    <p>Faster load times and better user experience.</p>
-  </div>
+    <ul>
+      <li>Reduced page load time significantly</li>
+      <li>Improved user experience and responsiveness</li>
+      <li>Increased system scalability</li>
+    </ul>
+    </div>
+</div>
 
-</section>
+<footer>
+  <p>© 2026 Ryan Navarroza — Full-Stack Developer Portfolio</p>
+</footer>
+
+<script>
+function openModal(id) {
+  document.getElementById(id).style.display = 'flex';
+}
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+window.onclick = function(e) {
+  document.querySelectorAll('.modal').forEach(m => {
+    if (e.target === m) m.style.display = 'none';
+  });
+}
+</script>
 
 </body>
 </html>
